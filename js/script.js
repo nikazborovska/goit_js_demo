@@ -92,9 +92,77 @@ const welcomeMsg2 = `Гість ${firstName} ${lastName} поселяється 
 console.log(welcomeMsg2);
 
 
-//
+//Нормалізація з методом toLowerCase
+let brand = prompt('Введіть бренд');
+brand = brand.toLowerCase();
+console.log(brand);
+
+//методи .toLowerCase(), .toUpperCase(), .slice()
+let mainBrand = 'samSunG';
+console.log(mainBrand[4]);
+console.log(mainBrand.slice(1).toLowerCase());
+console.log(mainBrand[0].toUpperCase() + mainBrand.slice(1).toLowerCase());
 
 
+//Пошук в рядку за допомогою методу includes(), який повертає значення true або false
+//тобто чи включає в себе даний рядок таке то значення:true-включає, false-ні.
+const blackListedWord1 = 'спам';
+const blackListedWord2 = 'розпродаж';
+
+const string1 = "Привіт, я принц Абдул, це не спам, пропоную тобі мільйон!";
+const string2 = "Найбільший РОЗПРОДАЖ цього тижня, не пропустіть!";
+const string3 = "Рекламна компанія #fatlivesmatter";
+
+console.log(string1.toLowerCase().includes(blackListedWord1));
+console.log(string1.toLowerCase().includes(blackListedWord2));
+
+console.log(string2.toLowerCase().includes(blackListedWord1));
+console.log(string2.toLowerCase().includes(blackListedWord2));
+
+console.log(string3.toLowerCase().includes(blackListedWord1));
+console.log(string3.toLowerCase().includes(blackListedWord2));
+
+//Оператори порівняння. Оператор - це знак порівняння;
+//операнд - це значення зліва та справа від знаку порівняння;
+//операнд при порівнюванні завжди приводить усі значення до типу даних Number;
+const x = '5' >= 5;
+console.log(x);
+
+//при застосуванні операторів строгої рівності (===) та
+//строгої нерівності(!==) операнди не змінюють свій тип даних
+//тобто рядок вже не буде прирівнюватись до числа і тд, так як при ()==) і (!=)
+
+//Лише 6 значень приводяться до false:
+//(0, NaN, null, undefined, false, пустий рядок '' або "")
+console.log(Boolean(0));
+console.log(Boolean(NaN));
+console.log(Boolean(undefined));
+console.log(Boolean(null));
+console.log(Boolean(false));
+console.log(Boolean(''));
+console.log(Boolean(""));
+
+
+//Оператор  І (AND) (&&)
+//Запинається на false
+//Повертає значення, на якому запнулося або останній операнд
+const isChecked = true; 
+const isOn = false; 
+console.log(isChecked && isOn);
+
+
+//Оператор АБО (OR) (||)
+//Запинається на true
+//Повертає значення, на якому запнулося або останній операнд
+const num65 = 65;
+const num36 = 36;
+const numOfNull = null;
+console.log(num65 || numOfNull || num36);
+
+//Оператор заперечення (!)
+//обертає значення в протилежне 
+console.log(!0); //буде true, тому що 0 - це false,
+//а оператор заперечення(!) обертає значення на протижне - тобто на true.
 
 
 
