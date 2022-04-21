@@ -166,4 +166,105 @@ console.log(!0); //буде true, тому що 0 - це false,
 
 
 
+//Задачка: написати скрипт, який зможе визначити чи лежить дане число
+//на відрізку який обмежується значеннями x1 та x2
+const x1 = 10;
+const x2 = 30;
+const number = 50;
 
+console.log(`Чи потрапляє число ${number} у відрізок до ${x1}?`, number < x1);
+console.log(`Чи потрапляє число ${number} у відрізок після ${x2}?`, number > x2);
+console.log(`Чи потрапляє число ${number} у відрізок від ${x1} до ${x2}?`, x1 < number && number < x2);
+console.log(`Чи потрапляє число ${number} у відрізок до ${x1} або після ${x2}?`, number < x1 || number > x2);
+
+
+//Задачка:написати скрипт, який провіряє можливість розпочати чат з користувачем.
+//Для цього користувач повинен бути:
+// - другом
+// - онлайн
+// - без режиму не турбувати
+const isOnline = true;
+const isFriend = true;
+const isDnd = false;
+
+const canOpenChat = isOnline && isFriend && !isDnd;
+console.log('Чи можу я розпочати чат?', canOpenChat);
+
+//Задачка: перевірка підписки користувача, для отримання доступу
+//Є три типи підписки: free, pro, vip
+//Отримати доступ можуть тільки користувачі pro та vip
+const subscription = 'pro';
+const canAccesContent = subscription === 'pro' || subscription === 'vip';
+console.log('Чи можу я отримати доступ до контенту?', canAccesContent);
+
+
+//Оператор розгалуження if
+//складається з умови(виразу)() та тіла {}. Якщо умова = true, то тіло виконується
+//а якщо умова = false, то тіло ігнорується 
+if (5 < 30) {
+    console.log('Вираз приводиться до true - тому й був виведений у консоль');
+}
+
+
+//Оператор розгалуження if...else
+if (50 > 10) {
+    console.log('x > y');
+} else {
+    console.log('x < y');
+}
+
+
+//Оператор розгалуження else...if
+//Використовується там, де є декілька умов, але виконатися має лише одна з них.
+const salary = 5000;
+if (salary <= 500) {
+    console.log('Низький рівень');
+} else if (salary > 500 && salary <= 1500) {
+    console.log('Середній рівень');
+} else if (salary > 1500 && salary < 3000) {
+    console.log('Високий рівень');
+} else {
+    console.log('Максимальний рівень');
+}
+
+
+//Тернарний оператор
+const balance = -1000;
+// let message;
+// if (balance >= 0) {
+//     message = "Додатний баланс";
+// } else {
+//     message = "Від'ємний баланс";
+// }
+const message = (balance >= 0) ? console.log("Додатний баланс") : console.log("Від'ємний баланс");
+// console.log(message);
+
+
+//Блочна (локальна) область видимості змінних
+//працює принципом "матрьошки": те що всередині - не видно ззовні;
+//а те, що ззовні видно всередині
+const b = 10;
+if (true) {
+    console.log(b);
+    const a = 5;
+    console.log(a);
+}
+console.log(a); //a не знайдено, бо змінна а була об'явлена всередині області видимості
+console.log(b);
+
+
+//Задача: написати скрипт обробки покупки в магазині
+let balanceOfUser = 10000; //баланс користувача
+const payment = 10000; //сума покупки
+console.log(`Загальна сума замовлення ${payment}. Перевіряємо чи доступні кошти на вашому рахунку...`);
+
+const messageError = 'На рахунку недостатньо коштів для проведення даної операції!';
+
+if (payment <= balanceOfUser) {
+    balanceOfUser = balanceOfUser - payment;
+    console.log('Все ок, знімаємо кошти. Дякуємо за покупку!');
+    console.log(`На рахунку залишилось ${balanceOfUser}.`);
+} else {
+    console.log(messageError);
+}
+console.log('Операція завершена!');
