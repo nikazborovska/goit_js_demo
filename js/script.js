@@ -249,13 +249,13 @@ if (true) {
     const a = 5;
     console.log(a);
 }
-console.log(a); //a не знайдено, бо змінна а була об'явлена всередині області видимості
+//console.log(a); змінну a не знайдено, бо змінна а була об'явлена всередині області видимості
 console.log(b);
 
 
 //Задача: написати скрипт обробки покупки в магазині
 let balanceOfUser = 10000; //баланс користувача
-const payment = 10000; //сума покупки
+const payment = 1000; //сума покупки
 console.log(`Загальна сума замовлення ${payment}. Перевіряємо чи доступні кошти на вашому рахунку...`);
 
 const messageError = 'На рахунку недостатньо коштів для проведення даної операції!';
@@ -268,3 +268,49 @@ if (payment <= balanceOfUser) {
     console.log(messageError);
 }
 console.log('Операція завершена!');
+
+
+//Конструкція switch
+const stars = 5;
+let price;
+switch (stars) {
+    case 1:
+        price = '20$';
+        console.log(`${stars}-х зірковий готель вартує ${price}`);
+        break;
+    case 2:
+        price = '30$';
+        console.log(`${stars}-х зірковий готель вартує ${price}`);
+        break;
+    case 3:
+        price = '50$';
+        console.log(`${stars}-х зірковий готель вартує ${price}`);
+        break;
+    case 4:
+        price = '70$';
+        console.log(`${stars}-х зірковий готель вартує ${price}`);
+        break;
+    case 5:
+        price = '120$';
+        console.log(`${stars}-х зірковий готель вартує ${price}`);
+        break;
+    default:
+        console.log('Такої кількості зірок немає');
+        break;
+}
+
+// const stars = 3;
+// let price;
+
+// if (stars === 1 || stars ===2) {
+//     price = '20$';
+//     console.log(`${stars}-х зірковий готель вартує ${price}`);
+// } else if (stars === 3 || stars === 4) {
+//     price = '30$';
+//     console.log(`${stars}-х зірковий готель вартує ${price}`); 
+// } else if (stars === 5) {
+//     price = '120$';
+//     console.log(`${stars}-х зірковий готель вартує ${price}`);
+// } else {
+//     console.log('Такої кількості зірок немає');
+// }
